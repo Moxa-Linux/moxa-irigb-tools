@@ -1,3 +1,9 @@
+moxa-irigb-tools (1.0.1+deb9) stretch; urgency=low
+
+  * following Debian package build standard
+
+ -- Elvis Yao (姚家瑋) <ElvisCW.Yao@moxa.com>  Tue, 12 Mar 2019 14:19:46 +0800
+
 moxa-irigb-tools (1.0.0+deb9) stretch; urgency=low
 
   * Initial release.
