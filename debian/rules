@@ -8,7 +8,7 @@ export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
 	dh $@ --with=systemd
 
 override_dh_installinit:
-	dh_systemd_enable -pmoxa-irigb-tools --name=mx_hsrprp mx_hsrprp.service
+	dh_systemd_enable -pmoxa-irigb-tools --name=mx_irigb mx_irigb.service
 	dh_installinit -pmoxa-irigb-tools --no-start --noscripts
 
 override_dh_auto_build:
