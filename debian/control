@@ -1,0 +1,15 @@
+Source: moxa-irigb-tools
+Section: admin
+Priority: required
+Maintainer: Elvis Yao <ElvisCW.Yao@moxa.com>
+Build-Depends: debhelper (>= 10),
+               g++-multilib
+Standards-Version: 4.1.2
+Homepage: https://www.moxa.com/
+
+Package: moxa-irigb-tools
+Architecture: any
+Depends: ${misc:Depends},
+         g++-multilib
+Description: Utility for controlling DA-IRIG-B expansion module
+ It contains the necessary tools for setting up DA-IRIG-B

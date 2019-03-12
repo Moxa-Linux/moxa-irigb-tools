@@ -1,0 +1,5 @@
+moxa-irigb-tools (1.0.0+deb9) stretch; urgency=low
+
+  * Initial release.
+
+ -- Elvis Yao (姚家瑋) <ElvisCW.Yao@moxa.com>  Mon, 11 Mar 2019 10:56:48 +0800
