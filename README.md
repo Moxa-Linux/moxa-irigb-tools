@@ -49,16 +49,16 @@ root@Moxa:/home/moxa/moxa-irigb-tools# /usr/sbin/ServiceSyncTime -t 1 -s 2 -i 10
 
 For Debian system reference systemd service in package
 ```
-root@Moxa:/home/moxa# systemctl enable mx_hsrprp.service
-Created symlink /etc/systemd/system/multi-user.target.wants/mx_hsrprp.service → /lib/systemd/system/mx_hsrprp.service.
-root@Moxa:/home/moxa# systemctl status mx_hsrprp.service
-● mx_hsrprp.service - Moxa DA-IRIG-B daemon service
-   Loaded: loaded (/lib/systemd/system/mx_hsrprp.service; enabled; vendor preset: enabled)
+root@Moxa:/home/moxa# systemctl enable mx_irigb.service
+Created symlink /etc/systemd/system/multi-user.target.wants/irigb.service → /lib/systemd/system/mx_irigb.service.
+root@Moxa:/home/moxa# systemctl status mx_irigb.service
+● mx_irigb.service - Moxa DA-IRIG-B daemon service
+   Loaded: loaded (/lib/systemd/system/mx_irigb.service; enabled; vendor preset: enabled)
    Active: active (exited) since Mon 2019-03-11 15:39:05 CST; 13min ago
   Process: 309 ExecStart=/usr/sbin/mx_irigb.sh start (code=exited, status=0/SUCCESS)
  Main PID: 309 (code=exited, status=0/SUCCESS)
     Tasks: 0 (limit: 4915)
-   CGroup: /system.slice/mx_hsrprp.service
+   CGroup: /system.slice/mx_irigb.service
 
 Mar 11 15:39:05 Moxa systemd[1]: Starting Moxa DA-IRIG-B daemon service...
 Mar 11 15:39:05 Moxa systemd[1]: Started Moxa DA-IRIG-B daemon service.
