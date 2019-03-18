@@ -1,7 +1,6 @@
 CXX=g++
 
 DIR = mxirig \
-unitest \
 mxIrigUtil \
 mxSyncTimeSvc
 
