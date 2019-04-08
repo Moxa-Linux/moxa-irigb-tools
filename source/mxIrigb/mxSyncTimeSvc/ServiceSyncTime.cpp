@@ -196,7 +196,7 @@ int create_pid_file(const char *pidFile) {
 	char buf[20];
 	int fd_pid;
 
-	fd_pid = open(pidFile, O_CREAT|O_TRUNC|O_RDWR);
+	fd_pid = open(pidFile, O_CREAT|O_TRUNC|O_RDWR, 0777);
 	if ( fd_pid < 0 ) {
 		printf("Open %s fail\n", pidFile);
 		return -EEXIST;
