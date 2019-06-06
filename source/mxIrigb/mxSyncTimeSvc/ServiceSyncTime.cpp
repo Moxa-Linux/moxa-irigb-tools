@@ -1,6 +1,6 @@
 /*
  * IRIG-B time sync daemon.
- * Usage: ServiceSyncTime -t [signal type] -I -d -i [Time sync interval] -s [Time Source] -p [Parity check mode] -B
+ * Usage: ServiceSyncTime -t [signal type] -I -i [Time sync interval] -s [Time Source] -p [Parity check mode] -B
  *  -t - [signal type]
  *      0 - TTL
  *      1 - DIFF
@@ -74,7 +74,7 @@ int bStopping = 0;
 void usage(char *name) {
 
 	printf("IRIG-B time sync daemon.\n");
-	printf("Usage: ServiceSyncTime -t [signal type] -I -d -i [Time sync interval] -s [Time Source] -p [Parity check mode] -B\n");
+	printf("Usage: ServiceSyncTime -t [signal type] -I -i [Time sync interval] -s [Time Source] -p [Parity check mode] -B\n");
 #ifdef __ENABLE_OUTPUT_FEATURE__
 	printf("-o [port to output] -f [from port] -w [PPS width]\n");
 #endif  /* end of __ENABLE_OUTPUT_FEATURE__ */
