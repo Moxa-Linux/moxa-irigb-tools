@@ -1,3 +1,10 @@
+moxa-irigb-tools (1.0.3+deb9) stretch; urgency=low
+
+  * fix: fix printf format warning
+  * fix: update ServiceSyncTime usage -d option
+
+ -- Elvis Yao (姚家瑋) <ElvisCW.Yao@moxa.com>  Mon, 10 Jun 2019 13:19:30 +0800
+
 moxa-irigb-tools (1.0.2+deb9) stretch; urgency=low
 
   * fix: open with O_CREAT in second argument needs 3 arguments
