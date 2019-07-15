@@ -355,7 +355,7 @@ int main(int argc, char* argv[])
 	DWORD dwHwId;
 	ret = mxIrigbGetHardwareID(hDev, &dwHwId);
 	if ( ret ) {
-		printf("Hardware ID = %d (%s)\n",
+		printf("Hardware ID = %ld (%s)\n============================\n",
 			dwHwId, strHardWareId[dwHwId]);
 	} else {
 		fprintf(stderr, "mxIrigbGetHardwareID error!");
@@ -363,7 +363,7 @@ int main(int argc, char* argv[])
 	}
 
 	if (FUNCODE_mxIrigbGetHardwareID == controlMode) {
-		printf("Hardware ID = %d (%s)\n",
+		printf("Get Hardware ID = %ld (%s)\n",
 			dwHwId, strHardWareId[dwHwId]);
 	} else if (FUNCODE_mxIrigbGetTime == controlMode) {
 		ret = mxIrigbGetTime( hDev, &rtctime);
@@ -416,9 +416,9 @@ int main(int argc, char* argv[])
 		}
 	} else if (FUNCODE_mxIrigbGetSyncTimeSrc == controlMode) {
 		DWORD dwSync;
-		ret = mxIrigbGetSyncTimeSrc( hDev, &dwSync);
+		ret = mxIrigbGetSyncTimeSrc(hDev, &dwSync);
 		if (ret) {
-			printf("Sync. Source = %d (%s)\n",
+			printf("Sync. Source = %ld (%s)\n",
 				dwSync, strTimeSrc[dwSync]);
 		}
 	} else if (FUNCODE_mxIrigbSetSyncTimeSrc == controlMode) {
@@ -426,7 +426,7 @@ int main(int argc, char* argv[])
 
 		ret = mxIrigbSetSyncTimeSrc(hDev, dwSync);
 		if (ret) {
-			printf("Set Sync. Source = %d\n", dwSync);
+			printf("Set Sync. Source = %ld\n", dwSync);
 		}
 	} else if (FUNCODE_mxIrigbGetSignalStatus == controlMode) {
 		DWORD dwSync = ( !p[0] ) ? TIMESRC_PORT1 : atoi(p[0]);
@@ -434,7 +434,7 @@ int main(int argc, char* argv[])
 		
 		ret = mxIrigbGetSignalStatus(hDev, dwSync, &dwStatus);
 		if (ret) {
-			printf("%s Signal status = %d(%s)\n",
+			printf("%s Signal status = %ld(%s)\n",
 				strTimeSrc[dwSync], dwStatus,
 				strSignalStatus[dwStatus]);
 		}
@@ -443,14 +443,14 @@ int main(int argc, char* argv[])
 
 		ret = mxIrigbGetPpsWidth(hDev, &dwPpsWidth);
 		if (ret) {
-			printf("PPS width = %d ms\n", dwPpsWidth);
+			printf("PPS width = %ld ms\n", dwPpsWidth);
 		}
 	} else if (FUNCODE_mxIrigbSetPpsWidth == controlMode) {
 		DWORD dwPpsWidth = ( !p[0] ) ? 0 : atoi(p[0]);
 
 		ret = mxIrigbSetPpsWidth(hDev, dwPpsWidth);
 		if (ret) {
-			printf("Set PPS width = %d ms\n", dwPpsWidth);
+			printf("Set PPS width = %ld ms\n", dwPpsWidth);
 		}
 	} else if (FUNCODE_mxIrigbGetInputSignalType == controlMode) {
 		DWORD dwPort = ( !p[0] ) ? PORT_1 : atoi(p[0]);
@@ -459,7 +459,7 @@ int main(int argc, char* argv[])
 		ret = mxIrigbGetInputSignalType( hDev,
 			dwPort, &dwSignalType, &bInvert);
 		if (ret) {
-			printf("%s Input signal = %d(%s), Inverse = %d\n", 
+			printf("%s Input signal = %ld(%s), Inverse = %d\n",
 				strPortList[dwPort], dwSignalType,
 				strSignalType[dwSignalType], bInvert);
 		}
@@ -493,7 +493,7 @@ int main(int argc, char* argv[])
 		ret = mxIrigbSetInputSignalType(
 			hDev, dwPort, dwSignalType, bInvert);
 		if (ret) {
-			printf("Set %s Input signal = %d(%s), Inverse = %d\n",
+			printf("Set %s Input signal = %ld(%s), Inverse = %d\n",
 				strPortList[dwPort], dwSignalType,
 				strSignalType[dwSignalType], bInvert);
 		}
@@ -506,10 +506,10 @@ int main(int argc, char* argv[])
 		ret = mxIrigbGetOutputSignalType(
 			hDev, dwPort, &dwSignalType, &dwMode, &bInvert);
 		if (ret) {
-			printf("%s Output signal = %d(%s), ",
+			printf("%s Output signal = %ld(%s), ",
 				strPortList[dwPort], dwSignalType,
 				strSignalType[dwSignalType] );
-			printf("Mode = %d(%s), Inverse = %d\n",
+			printf("Mode = %ld(%s), Inverse = %d\n",
 				dwMode, strOutputMode[dwMode], bInvert);
 		}
 	} else if (FUNCODE_mxIrigbSetOutputSignalType == controlMode) {
@@ -521,10 +521,10 @@ int main(int argc, char* argv[])
 		ret = mxIrigbSetOutputSignalType(
 			hDev, dwPort, dwSignalType, dwMode, bInvert);
 		if (ret) {
-			printf("%s Output signal = %d(%s), ",
+			printf("%s Output signal = %ld(%s), ",
 				strPortList[dwPort], dwSignalType,
 				strSignalType[dwSignalType] );
-			printf("Mode = %d(%s), Inverse = %d\n",
+			printf("Mode = %ld(%s), Inverse = %d\n",
 				dwMode, strOutputMode[dwMode], bInvert);
 		}
 	} else if (FUNCODE_mxIrigbGetDigitalOutputSignal == controlMode) {
@@ -533,7 +533,7 @@ int main(int argc, char* argv[])
 
 		ret = mxIrigbGetDigitalOutputSignal( hDev, dwPort, &dwValue);
 		if (ret) {
-			printf("Get DO %d = %d\n", dwPort, dwValue);
+			printf("Get DO %ld = %ld\n", dwPort, dwValue);
 		}
 	} else if (FUNCODE_mxIrigbSetDigitalOutputSignal == controlMode) {
 		DWORD dwPort = ( !p[0] ) ? 0 : atoi(p[0]);
@@ -541,7 +541,7 @@ int main(int argc, char* argv[])
 
 		ret = mxIrigbSetDigitalOutputSignal( hDev, dwPort, dwValue);
 		if (ret) {
-			printf("Set DO %d = %d\n", dwPort, dwValue);
+			printf("Set DO %ld = %ld\n", dwPort, dwValue);
 		}
 	} else if (FUNCODE_mxIrigbGetDigitalInputSignal == controlMode) {
 		DWORD dwPort = ( !p[0] ) ? 0 : atoi(p[0]);
@@ -554,7 +554,7 @@ int main(int argc, char* argv[])
 		}
 		ret = mxIrigbGetDigitalInputSignal( hDev, dwPort, &dwValue);
 		if (ret) {
-			printf("Get DI %d = %d\n", dwPort, dwValue);
+			printf("Get DI %ld = %ld\n", dwPort, dwValue);
 		}
 	} else if (FUNCODE_mxIrigbSetInputParityCheckMode == controlMode) {
 		DWORD dwPort = ( !p[0] ) ? TIMESRC_PORT1 : atoi(p[0]);
