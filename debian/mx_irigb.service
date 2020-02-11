@@ -1,0 +1,11 @@
+[Unit]
+Description=Moxa DA-IRIG-B daemon service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/sbin/mx_irigb.sh start
+ExecStop=/usr/sbin/mx_irigb.sh stop
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

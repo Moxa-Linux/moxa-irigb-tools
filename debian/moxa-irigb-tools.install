@@ -1,0 +1,3 @@
+mx_irigb.sh /usr/sbin
+mxSyncTimeSvc/ServiceSyncTime /usr/sbin
+mxIrigUtil/mxIrigUtil /usr/sbin
