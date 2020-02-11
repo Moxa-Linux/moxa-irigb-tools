@@ -1,0 +1,31 @@
+moxa-irigb-tools (1.0.4+deb9) stretch; urgency=low
+
+  * refactor: remove source dir and move source code to root dir
+  * fix: replace lib*-dev package by shlibs:Depends on control file
+
+ -- Elvis Yao (姚家瑋) <ElvisCW.Yao@moxa.com>  Mon, 01 Jul 2019 11:37:16 +0800
+
+moxa-irigb-tools (1.0.3+deb9) stretch; urgency=low
+
+  * fix: fix printf format warning
+  * fix: update ServiceSyncTime usage -d option
+
+ -- Elvis Yao (姚家瑋) <ElvisCW.Yao@moxa.com>  Mon, 10 Jun 2019 13:19:30 +0800
+
+moxa-irigb-tools (1.0.2+deb9) stretch; urgency=low
+
+  * fix: open with O_CREAT in second argument needs 3 arguments
+
+ -- Elvis Yao (姚家瑋) <ElvisCW.Yao@moxa.com>  Mon, 08 Apr 2019 10:52:26 +0800
+
+moxa-irigb-tools (1.0.1+deb9) stretch; urgency=low
+
+  * following Debian package build standard
+
+ -- Elvis Yao (姚家瑋) <ElvisCW.Yao@moxa.com>  Tue, 12 Mar 2019 14:19:46 +0800
+
+moxa-irigb-tools (1.0.0+deb9) stretch; urgency=low
+
+  * Initial release.
+
+ -- Elvis Yao (姚家瑋) <ElvisCW.Yao@moxa.com>  Mon, 11 Mar 2019 10:56:48 +0800
